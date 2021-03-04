@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-public class TechnicalBlogPostApplication {N
+public class TechnicalBlogPostApplication {
 	public TechnicalBlogPostApplication(){
 		System.out.println("*********** TechnicalBlogPostApplication ***********");
 	}
