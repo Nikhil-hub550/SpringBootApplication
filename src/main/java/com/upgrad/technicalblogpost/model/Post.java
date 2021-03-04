@@ -29,6 +29,30 @@ public class Post {
     @JoinColumn(name="user_id")
     private User user;
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Category> categories= new ArrayList<Category>();
+
+    @Transient
+    private String javaBlog;
+    @Transient
+    private String springBLog;
+
+    public String getJavaBlog() {
+        return javaBlog;
+    }
+      //getter and setter
+    public void setJavaBlog(String javaBlog) {
+        this.javaBlog = javaBlog;
+    }
+
+    public String getSpringBLog() {
+        return springBLog;
+    }
+
+    public void setSpringBLog(String springBLog) {
+        this.springBLog = springBLog;
+    }
+
     public User getUser() {
         return user;
     }
@@ -44,9 +68,6 @@ public class Post {
     public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
-
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Category> categories= new ArrayList<Category>();
 
     public Integer getId() {
         return id;
